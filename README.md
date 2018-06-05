@@ -1,2 +1,2 @@
 # WebClient_Trendify
-Administrative web client for Tweets Near You application.
+Administrative web client for Trendify application.
