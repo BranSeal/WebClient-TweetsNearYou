@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Trendify Web Client Login</title>
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900" rel="stylesheet">
+</head>
+
+<body>
+    <p id = "welcome">Enter an email and password below and either sign in to an existing account or sign up<br></p>
+
+    <input type="text" id="email" name="email" placeholder="Email"/>
+    &nbsp;&nbsp;&nbsp;
+    <input type="password" id="password" name="password" placeholder="Password"/>
+    <br/><br/>
+
+    <button id = "signIn" onclick = "signIn()">Sign In</button>
+    <br></br>
+    <button id = "showSignUp" onclick = "showSignUp()">Sign Up Here</button>
+    <br></br>
+    <button id = "submitForgotPass" onclick = "submitForgotPass()" style = "display: none">Submit</button>
+    <button id = "forgotPass" onclick = "forgotPass()">Forgot Password?</button>
+    <br></br>
+    <button id = "signUp" onclick = "signUp()" style = "display: none">Sign Up</button>
+    <br></br>
+    <button id = "backToSignIn" onclick = "backToSignIn()" style = "display: none">Back to sign in</button>
+
+</body>
+
+<script src="https://www.gstatic.com/firebasejs/5.1.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyB7L90KJXE9QtBEHpf1HDajs6eXY9DZjnU",
+    authDomain: "trendify-26b3b.firebaseapp.com",
+    databaseURL: "https://trendify-26b3b.firebaseio.com",
+    projectId: "trendify-26b3b",
+    storageBucket: "trendify-26b3b.appspot.com",
+    messagingSenderId: "804966898269"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<script src = "js/login.js"></script>
+
+</html>
