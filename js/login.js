@@ -1,9 +1,10 @@
 function showSignUp() {
     document.getElementById("backToSignIn").style.display = "block";
+    document.getElementById("signUpButton").style.display = "block";
     document.getElementById("signUp").style.display = "block";
 
-    document.getElementById("signIn").style.display = "none";
-    document.getElementById("showSignUp").style.display = "none";
+    document.getElementById("signInButton").style.display = "none";
+    document.getElementById("showSignUpButton").style.display = "none";
     document.getElementById("forgotPass").style.display = "none";
 
     document.getElementById("email").value = "";
@@ -12,15 +13,16 @@ function showSignUp() {
 
 function backToSignIn() {
     document.getElementById("backToSignIn").style.display = "none";
-    document.getElementById("signUp").style.display = "none";
+    document.getElementById("signUpButton").style.display = "none";
+    document.getElementById("signUpButton").style.display = "none";
     document.getElementById("submitForgotPass").style.display = "none";
 
-    document.getElementById("signIn").style.display = "block";
-    document.getElementById("showSignUp").style.display = "block";
+    document.getElementById("signInButton").style.display = "block";
+    document.getElementById("showSignUpButton").style.display = "block";
     document.getElementById("forgotPass").style.display = "block";
 
     document.getElementById("email").value = "";
-    document.getElementById("password").style.display = "block";
+    document.getElementById("passInput").style.display = "block";
     document.getElementById("password").value = "";
 }
 
@@ -102,14 +104,14 @@ function signUp() {
 
 function forgotPass() {
     document.getElementById("backToSignIn").style.display = "block";
-    document.getElementById("signUp").style.display = "none";
+    document.getElementById("signUpButton").style.display = "none";
 
-    document.getElementById("signIn").style.display = "none";
-    document.getElementById("showSignUp").style.display = "none";
+    document.getElementById("signInButton").style.display = "none";
+    document.getElementById("showSignUpButton").style.display = "none";
     document.getElementById("forgotPass").style.display = "none";
 
     document.getElementById("submitForgotPass").style.display = "block";
-    document.getElementById("password").style.display = "none";
+    document.getElementById("passInput").style.display = "none";
 
     document.getElementById("email").value = "";
     document.getElementById("password").value = "";

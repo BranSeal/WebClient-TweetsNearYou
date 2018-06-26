@@ -13,34 +13,43 @@
 
     <input type="text" id="email" name="email" placeholder="Email"/>
     &nbsp;&nbsp;&nbsp;
-    <input type="password" id="password" name="password" placeholder="Password"/>
-    <br/><br/>
+    <div id = "passInput">
+        <input type="password" id="password" name="password" placeholder="Password"/>
+        <br/><br/>
+    </div>
 
-    <button id = "signIn" onclick = "signIn()">Sign In</button>
-    <br></br>
-    <button id = "showSignUp" onclick = "showSignUp()">Sign Up Here</button>
-    <br></br>
+    <div id = "signInButton">
+        <button id = "signIn" onclick = "signIn()">Sign In</button>
+        <br></br>
+    </div>
+    <div id = "showSignUpButton">
+        <button id = "showSignUp" onclick = "showSignUp()">Sign Up Here</button>
+        <br></br>
+    </div>
     <button id = "submitForgotPass" onclick = "submitForgotPass()" style = "display: none">Submit</button>
     <button id = "forgotPass" onclick = "forgotPass()">Forgot Password?</button>
     <br></br>
-    <button id = "signUp" onclick = "signUp()" style = "display: none">Sign Up</button>
-    <br></br>
+
+    <div id = "signUpButton">
+        <button id = "signUp" onclick = "signUp()" style = "display: none">Sign Up</button>
+        <br></br>
+    </div>
     <button id = "backToSignIn" onclick = "backToSignIn()" style = "display: none">Back to sign in</button>
 
 </body>
 
 <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase.js"></script>
 <script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyB7L90KJXE9QtBEHpf1HDajs6eXY9DZjnU",
-    authDomain: "trendify-26b3b.firebaseapp.com",
-    databaseURL: "https://trendify-26b3b.firebaseio.com",
-    projectId: "trendify-26b3b",
-    storageBucket: "trendify-26b3b.appspot.com",
-    messagingSenderId: "804966898269"
-  };
-  firebase.initializeApp(config);
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyB7L90KJXE9QtBEHpf1HDajs6eXY9DZjnU",
+        authDomain: "trendify-26b3b.firebaseapp.com",
+        databaseURL: "https://trendify-26b3b.firebaseio.com",
+        projectId: "trendify-26b3b",
+        storageBucket: "trendify-26b3b.appspot.com",
+        messagingSenderId: "804966898269"
+    };
+    firebase.initializeApp(config);
 </script>
 
 <script src = "js/login.js"></script>
