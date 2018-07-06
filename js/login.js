@@ -93,7 +93,7 @@ function signUp() {
         // [END_EXCLUDE]
     });
 
-    alert("Sign up successful.")
+    alert("Sign up successful.");
     // [END createwithemail]
     firebase.auth().onAuthStateChanged(user => {
             if(user) {
