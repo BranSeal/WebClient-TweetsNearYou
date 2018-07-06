@@ -1,4 +1,4 @@
-mapboxgl.accessToken = 'pk.eyJ1IjoidGltZWZvcmNoYW5nIiwiYSI6ImNqajlnemY4ZzFkdHAza21ncHNlYXN5a24ifQ.2ir0OTVjqtJECiyIvFoI4w';
+L.mapbox.accessToken = 'pk.eyJ1IjoidGltZWZvcmNoYW5nIiwiYSI6ImNqajlnemY4ZzFkdHAza21ncHNlYXN5a24ifQ.2ir0OTVjqtJECiyIvFoI4w';
 var url = 'https://github.com/BranSeal/WebClient_Trendify/blob/master/data/test.geojson';
 
 var map = new mapboxgl.Map({
