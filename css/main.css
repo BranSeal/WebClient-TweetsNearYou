@@ -17,16 +17,16 @@ body {
 
 input {
     margin: 0 auto;
-    text-align: center;
+    text-align: left;
     font-family: 'Lato';
     font-size: 15px;
     font-weight: 800;
     color: #a32727;
     background-color: #fff;
     height: 2.5em;
-    padding: 0 .5em;
-    border-style: solid;
-    border-color: gray;
+    width: 25em;
+    padding: 0 1.5em;
+    border: none;
     border-radius: 0.5em;
 }
 
@@ -40,12 +40,11 @@ button {
     background-color: #fff;
     height: 2.5em;
     width: auto;
-    padding: 0 .5em;
-    border-style: solid;
-    border-color: gray;
+    padding: 0 1.5em;
+    border: none;
     border-radius: 0.5em;
+    box-shadow: 0px 5px #ddd;
 }
-
 
 button:hover {
     transform: translateY(1px);

@@ -4,6 +4,8 @@
     {
       "type": "Feature",
       "properties": {
+        "title": "First Marker",
+        "description": "first of many",
         "objectid": "1"
       },
       "geometry": {

@@ -1,53 +1,66 @@
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900" rel="stylesheet">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-    <!-- Main CSS -->
-    <link type="text/css" rel="stylesheet" href="css/main.css" />
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+        <!-- Main CSS -->
+        <link type="text/css" rel="stylesheet" href="css/main.css" />
 
-    <script src='https://api.mapbox.com/mapbox-gl-js/v0.46.0/mapbox-gl.js'></script>
-    <link href='https://api.mapbox.com/mapbox-gl-js/v0.46.0/mapbox-gl.css' rel='stylesheet' />
+        <script src='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.js'></script>
+        <link href='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.css' rel='stylesheet' />
 
-    <title>Trendify Admin Dashboard</title>
-  </head>
-  <body>
-    <h1>Dashboard</h1>
-    <div class="map-date-picker">
-      Pick a map date to view trending events... <br>
-      <input type="date" name="mapday">
-      <button>Submit</button>  
-    </div>
+        <title>Trendify Admin Dashboard</title>
+    </head>
+    <body>
+        <h1>Dashboard</h1>
+        <div class="map-date-picker">
+            Pick a map date to view trending events... <br>
+            <input type="date" name="mapday">
+            <button>Submit</button>  
+        </div>
     
-    <div class="google-map">
-      Google Map:
-      <div id="map" style="height: 400px; width: 500px;"></div>
-    </div>
+        <div class="google-map">
+            Google Map:
+            <div id="map" style="height: 400px; width: 500px;"></div>
+            <script type="text/javascript">
+                L.mapbox.accessToken = 'pk.eyJ1IjoidGltZWZvcmNoYW5nIiwiYSI6ImNqajlnemY4ZzFkdHAza21ncHNlYXN5a24ifQ.2ir0OTVjqtJECiyIvFoI4w';
+                var map = L.mapbox.map('map', 'mapbox.streets').setView([33.75, -84.4], 11);
+
+                // As with any other AJAX request, this technique is subject to the Same Origin Policy:
+                // http://en.wikipedia.org/wiki/Same_origin_policy
+                // So the CSV file must be on the same domain as the Javascript, or the server
+                // delivering it should support CORS.
+                var featureLayer = L.mapbox.featureLayer()
+                    .loadURL('data/test.geojson')
+                    .addTo(map);
+            </script>
+        </div>
     
-    <div class="top-events">
-      Top Events:
-    </div>
+        <div class="top-events">
+            Top Events:
+        </div>
     
     
-    <div class="stats">
-      Statistical Reports:
-      <div class="map-date-picker">
-      Pick a statistic date range... <br>
-      <input type="date" name="start">
-      <input type="date" name="end">
-      <button>Submit</button>
-      </div>
-    </div>
+        <div class="stats">
+            Statistical Reports:
+            <div class="map-date-picker">
+                Pick a statistic date range... <br>
+                <input type="date" name="start">
+                <input type="date" name="end">
+                <button>Submit</button>
+            </div>
+        </div>
       
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 
-    <script src = "js/home.js"></script>
-  </body>
+        <script src = "js/home.js"></script>
+    </body>
 </html>
