@@ -13,6 +13,95 @@
         <script src='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.js'></script>
         <link href='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.css' rel='stylesheet' />
 
+        <script>
+            window.onload = function () {
+            var events = new CanvasJS.Chart("eventsContainer", {
+                animationEnabled: true,
+                theme: "light2",
+                title:{
+                    text: "Total Events per Day"
+                },
+                axisY:{
+                    includeZero: false
+                },
+                data: [{        
+                    type: "line",       
+                    dataPoints: [
+                        { y: 450 },
+                        { y: 414 },
+                        { y: 520 },
+                        { y: 460 },
+                        { y: 450 },
+                        { y: 500 },
+                        { y: 480 },
+                        { y: 480 },
+                        { y: 410 },
+                        { y: 500 },
+                        { y: 480 },
+                        { y: 510 }
+                    ]
+                }]
+            });
+            var users = new CanvasJS.Chart("usersContainer", {
+                animationEnabled: true,
+                theme: "light2",
+                title:{
+                    text: "Total Users per Day"
+                },
+                axisY:{
+                    includeZero: false
+                },
+                data: [{        
+                    type: "line",       
+                    dataPoints: [
+                        { y: 450 },
+                        { y: 414 },
+                        { y: 520 },
+                        { y: 460 },
+                        { y: 450 },
+                        { y: 500 },
+                        { y: 480 },
+                        { y: 480 },
+                        { y: 410 },
+                        { y: 500 },
+                        { y: 480 },
+                        { y: 510 }
+                    ]
+                }]
+            });
+            var tweets = new CanvasJS.Chart("tweetsContainer", {
+                animationEnabled: true,
+                theme: "light2",
+                title:{
+                    text: "Total Tweets per Day"
+                },
+                axisY:{
+                    includeZero: false
+                },
+                data: [{        
+                    type: "line",       
+                    dataPoints: [
+                        { y: 450 },
+                        { y: 414 },
+                        { y: 520 },
+                        { y: 460 },
+                        { y: 450 },
+                        { y: 500 },
+                        { y: 480 },
+                        { y: 480 },
+                        { y: 410 },
+                        { y: 500 },
+                        { y: 480 },
+                        { y: 510 }
+                    ]
+                }]
+            });
+            events.render();
+            users.render();
+            tweets.render();
+            }
+        </script>
+
         <title>Trendify Admin Dashboard</title>
     </head>
     <body>
@@ -44,18 +133,12 @@
         <br></br>
     
         <div class="stats">
-            Statistical Reports:
-            <div class="map-date-picker">
-                Pick a statistic date range... <br>
-                <input type="date" id="start" name="start">
-                <input type="date" id="end" name="end">
-                <button>Submit</button>
-            </div>
-
-            <canvas width="960" height="500"></canvas>
-            <div>Total events per day</div>
-            <div>Total users per day</div>
-            <div>Total tweets per day</div>
+            <div id="eventsContainer" style="height: 370px; width: 500px;"></div>
+            <br />
+            <div id="usersContainer" style="height: 370px; width: 500px;"></div>
+            <br />
+            <div id="tweetsContainer" style="height: 370px; width: 500px;"></div>
+            <br />
         </div>
       
         <!-- Optional JavaScript -->
@@ -86,6 +169,7 @@
         </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
         <script src = "js/home.js"></script>
     </body>
 </html>
