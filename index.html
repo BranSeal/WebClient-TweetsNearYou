@@ -111,20 +111,26 @@
             <input type="date" id="mapday" name="mapday">
             <button class="submitMap" onclick="showMapData()">Submit</button>  
         </div>
+
+        <br></br>
     
         <div class="map-and-top-events-container">
             <div onload="loadMap()" class="mapbox-map">
-                Map:
+                <h2>Map:</h2>
                 <div id="map" style="height: 500px; width: 800px;"></div>
             </div>
         
-            <div class="some-space" style="width: 50px;"></div>
+            <div class="some-space" style="width: 30px;"></div>
 
-            <div class="top-events" style="width:300px; float:right;">
-                Top Events:
+            <div class="top-events" id="top-events" style="width:300px; float:right; display:none;">
+                <h2 class="top-events-text">Top Events:</h2>
+                <div style="height:15px;"></div>
+                <ol class="top-events-list"></ol>
             </div>
+            
         </div>
     
+        <br></br>
     
         <div class="stats">
             <div id="eventsContainer" style="height: 370px; width: 500px;"></div>
@@ -138,13 +144,24 @@
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-        <script>
+        <!-- <script>
             $(document).ready(function(){
                 $(".submitMap").click(function(){
                     $.post("python/json_to_geojson.py",
                     'data/' + document.getElementById('mapday').value + '.geojson',
                     function(data,status) {
                         alert("Status: " + status);
+                    });
+                });
+            });
+        </script> -->
+        <script>
+            $(document).ready(function(){
+                $(".submitMap").click(function(){
+                    $.getJSON('data/' + document.getElementById('mapday').value + '_top.json', function(result){
+                        $.each(result.list, function(i, field){
+                            $(".top-events-list").append("<li>" + "#" + field + "</li>");
+                        });
                     });
                 });
             });
