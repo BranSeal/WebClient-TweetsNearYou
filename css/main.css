@@ -1,5 +1,5 @@
 h1 {
-    margin-top:6em;
+    margin-top:2em;
     text-align: center;
     font-family: 'Lato';
     font-size: 2em;
@@ -60,3 +60,7 @@ button:active {
     cursor: pointer;
     background-color: #eee;
 }
+
+.mapbox-map, .top-events, .some-space {
+    display: inline-block;
+  }

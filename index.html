@@ -19,29 +19,21 @@
         <h1>Dashboard</h1>
         <div class="map-date-picker">
             Pick a map date to view trending events... <br>
-            <input type="date" name="mapday">
-            <button>Submit</button>  
+            <input type="date" id="mapday" name="mapday">
+            <button onclick="showMapData()">Submit</button>  
         </div>
     
-        <div class="google-map">
-            Google Map:
-            <div id="map" style="height: 400px; width: 500px;"></div>
-            <script type="text/javascript">
-                L.mapbox.accessToken = 'pk.eyJ1IjoidGltZWZvcmNoYW5nIiwiYSI6ImNqajlnemY4ZzFkdHAza21ncHNlYXN5a24ifQ.2ir0OTVjqtJECiyIvFoI4w';
-                var map = L.mapbox.map('map', 'mapbox.streets').setView([33.75, -84.4], 11);
+        <div class="map-and-top-events-container">
+            <div onload="loadMap()" class="mapbox-map">
+                Map:
+                <div id="map" style="height: 500px; width: 800px;"></div>
+            </div>
+        
+            <div class="some-space" style="width: 50px;"></div>
 
-                // As with any other AJAX request, this technique is subject to the Same Origin Policy:
-                // http://en.wikipedia.org/wiki/Same_origin_policy
-                // So the CSV file must be on the same domain as the Javascript, or the server
-                // delivering it should support CORS.
-                var featureLayer = L.mapbox.featureLayer()
-                    .loadURL('data/2018-07-07.geojson')
-                    .addTo(map);
-            </script>
-        </div>
-    
-        <div class="top-events">
-            Top Events:
+            <div class="top-events" style="width:300px; float:right;">
+                Top Events:
+            </div>
         </div>
     
     
@@ -49,8 +41,8 @@
             Statistical Reports:
             <div class="map-date-picker">
                 Pick a statistic date range... <br>
-                <input type="date" name="start">
-                <input type="date" name="end">
+                <input type="date" id="start" name="start">
+                <input type="date" id="end" name="end">
                 <button>Submit</button>
             </div>
         </div>
