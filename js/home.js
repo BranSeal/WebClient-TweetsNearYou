@@ -41,10 +41,7 @@ success: function showMapData() {
     // delivering it should support CORS.
     
     try {
-    	var featureLayer = L.mapbox.featureLayer()
-    	if (!L.geojson(url)) {
-    		console.log("error");
-    	}
+    	var featureLayer = L.mapbox.featureLayer();
 	    if (!featureLayer.loadURL(url)) {
 	    	throw ('No Data!');
 	    }
