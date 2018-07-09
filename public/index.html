@@ -6,6 +6,10 @@
     <title>Trendify Web Client Login</title>
     <link rel="stylesheet" type="text/css" href="css/login.css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900" rel="stylesheet">
+
+    <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-auth.js"></script>
 </head>
 
 <body>
@@ -38,18 +42,17 @@
 
 </body>
 
-<script src="https://www.gstatic.com/firebasejs/5.1.0/firebase.js"></script>
 <script>
-    // Initialize Firebase
-    var config = {
-        apiKey: "AIzaSyB7L90KJXE9QtBEHpf1HDajs6eXY9DZjnU",
-        authDomain: "trendify-26b3b.firebaseapp.com",
-        databaseURL: "https://trendify-26b3b.firebaseio.com",
-        projectId: "trendify-26b3b",
-        storageBucket: "trendify-26b3b.appspot.com",
-        messagingSenderId: "804966898269"
-    };
-    firebase.initializeApp(config);
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyB7L90KJXE9QtBEHpf1HDajs6eXY9DZjnU",
+    authDomain: "trendify-26b3b.firebaseapp.com",
+    databaseURL: "https://trendify-26b3b.firebaseio.com",
+    projectId: "trendify-26b3b",
+    storageBucket: "trendify-26b3b.appspot.com",
+    messagingSenderId: "804966898269"
+  };
+  firebase.initializeApp(config);
 </script>
 
 <script src = "js/login.js"></script>
