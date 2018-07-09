@@ -77,4 +77,8 @@ li {
 
 .mapbox-map, .top-events, .some-space {
     display: inline-block;
-  }
+}
+
+.eventsContainer, .usersContainer, .tweetsContainer {
+    border-radius: 0.5em;
+}
