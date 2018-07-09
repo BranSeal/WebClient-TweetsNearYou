@@ -12,7 +12,6 @@ var yyyy = today.getFullYear();
 
 today = yyyy+'-'+mm+'-'+dd;
 document.getElementById("mapday").setAttribute("max", today);
-document.getElementById("end").setAttribute("max", today);
 
 // a bunch of pre-loading map things
 var map = null;
