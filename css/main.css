@@ -6,6 +6,11 @@ h1 {
     font-weight: 700;
 }
 
+h2 {
+    font-family: 'Lato';
+    font-size: 1.5em;
+}
+
 body {
     background-color: #cf3d3d;
     font-family: 'Lato', Helvetica, sans-serif;
@@ -59,6 +64,15 @@ button:active {
     box-shadow: 0px 0px #ddd;
     cursor: pointer;
     background-color: #eee;
+}
+
+li {
+    margin: 10px 0;
+}
+
+.top-events-text {
+    padding-left: 20px;
+    padding-top: 80px;
 }
 
 .mapbox-map, .top-events, .some-space {

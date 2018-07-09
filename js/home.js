@@ -30,7 +30,7 @@ success: function showMapData() {
 
 	document.getElementById('map').innerHTML = "<div id='map' style='height: 500px; width: 800px;'></div>";
 	L.mapbox.accessToken = 'pk.eyJ1IjoidGltZWZvcmNoYW5nIiwiYSI6ImNqajlnemY4ZzFkdHAza21ncHNlYXN5a24ifQ.2ir0OTVjqtJECiyIvFoI4w';
-	if(map !== null && typeof( map ) !== 'undefined' ) {
+	if(map !== null && typeof(map) !== 'undefined' ) {
 		map.remove();
 	}
     map = L.mapbox.map('map', 'mapbox.streets').setView([33.75, -84.4], 11);
@@ -49,4 +49,6 @@ success: function showMapData() {
 	} catch (error) {
 		window.alert("There is no data for this day.");
 	}
+
+	document.getElementById("top-events").style.display = "block";
 }
