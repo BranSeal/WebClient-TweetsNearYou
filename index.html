@@ -59,7 +59,7 @@
         <script>
             $(document).ready(function(){
                 $(".submitMap").click(function(){
-                    $.post("~/python/json_to_geojson.py",
+                    $.post("python/json_to_geojson.py",
                     'data/' + document.getElementById('mapday').value + '.geojson',
                     function(data,status) {
                         alert("Status: " + status);
