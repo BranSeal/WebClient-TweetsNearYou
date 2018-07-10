@@ -153,37 +153,7 @@
 
         <script src = "js/home.js"></script>
         <script>
-            $(document).ready(function() {
-                // $.getJSON('data/top-records.json', function(result) {
-                //     var toShow = {
-                //         animationEnabled: true,
-                //         theme: "light2",
-                //         title:{
-                //             text: "Total Events per Day"
-                //         },
-                //         axisY:{
-                //             includeZero: false
-                //         },
-                //         data: [{        
-                //             type: "line",
-                //             dataPoints: []
-                //         }]
-                //     };
-
-                //     var today = new Date();
-                //     toShow["data"][1] = [];
-                //     $.each(result.events, function(i, field) {
-                //         var dateObj = new Date();
-                //         dateObj.setDate(dateObj.getDate() - i);
-                //         var date = dateObj.getFullYear() + "-" + (dateObj.getMonth()+1) + "-" + dateObj.getDate();
-                //         var toPush = {"y": field, "label":date};
-                //         toShow["data"][1].push(toPush);
-                //     });
-                //     var events = new CanvasJS.Chart("eventsContainer", toShow);
-                //     console.log(events);
-                //     events.render();
-                // });
-
+        $(document).ready(function() {
             $(document).ready(function(){
                 $(".submitMap").click(function(){
                     $.getJSON('data/' + document.getElementById('mapday').value + '_top.json', function(result){
