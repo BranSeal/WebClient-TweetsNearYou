@@ -26,21 +26,24 @@
                 },
                 data: [{        
                     type: "line",       
-                    dataPoints: [
-                        { y: 450 },
-                        { y: 414 },
-                        { y: 520 },
-                        { y: 460 },
-                        { y: 450 },
-                        { y: 500 },
-                        { y: 480 },
-                        { y: 480 },
-                        { y: 410 },
-                        { y: 500 },
-                        { y: 480 },
-                        { y: 510 }
-                    ]
+                    dataPoints: [        
+                        {"y": 450, "label":"Tuesday" },
+                        {"y": 414, "label":"Wednesday" },
+                        {"y": 520, "label":"Thursday" },
+                        {"y": 460, "label":"Friday" },
+                        {"y": 450, "label":"Saturday" },
+                        {"y": 500, "label":"Sunday" },
+                        {"y": 480, "label":"Monday" },
+                        {"y": 480, "label":"2018-07-10" }]
                 }]
+            });
+            var jsonFile = 'top-records.json'
+            $(document).ready(function(){
+                $.getJSON('data/' + jsonFile, function(result){
+                    $.each(result.events, function(i, field){
+                        console.log(field);
+                    });
+                });
             });
             var users = new CanvasJS.Chart("usersContainer", {
                 animationEnabled: true,
@@ -54,18 +57,14 @@
                 data: [{        
                     type: "line",       
                     dataPoints: [
-                        { y: 450 },
-                        { y: 414 },
-                        { y: 520 },
-                        { y: 460 },
-                        { y: 450 },
-                        { y: 500 },
-                        { y: 480 },
-                        { y: 480 },
-                        { y: 410 },
-                        { y: 500 },
-                        { y: 480 },
-                        { y: 510 }
+                        { y: 1203, label:"Tuesday" },
+                        { y: 902, label:"Wednesday" },
+                        { y: 1032, label:"Thursday" },
+                        { y: 882, label:"Friday" },
+                        { y: 1376, label:"Saturday" },
+                        { y: 1221, label:"Sunday" },
+                        { y: 927, label:"Monday" },
+                        { y: 812, label:"2018-07-10" }
                     ]
                 }]
             });
@@ -81,18 +80,14 @@
                 data: [{        
                     type: "line",       
                     dataPoints: [
-                        { y: 450 },
-                        { y: 414 },
-                        { y: 520 },
-                        { y: 460 },
-                        { y: 450 },
-                        { y: 500 },
-                        { y: 480 },
-                        { y: 480 },
-                        { y: 410 },
-                        { y: 500 },
-                        { y: 480 },
-                        { y: 510 }
+                        { y: 1457, label:"Tuesday" },
+                        { y: 236, label:"Wednesday" },
+                        { y: 488, label:"Thursday" },
+                        { y: 263, label:"Friday" },
+                        { y: 155, label:"Saturday" },
+                        { y: 646, label:"Sunday" },
+                        { y: 384, label:"Monday" },
+                        { y: 573, label:"2018-07-10" }
                     ]
                 }]
             });
