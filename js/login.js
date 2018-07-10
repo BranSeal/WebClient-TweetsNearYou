@@ -93,10 +93,10 @@ function signUp() {
         // [END_EXCLUDE]
     });
 
-    alert("Sign up successful.");
     // [END createwithemail]
     firebase.auth().onAuthStateChanged(user => {
             if(user) {
+                alert("Sign up successful.");
                 window.location = 'main.html'; //After successful login, user will be redirected to main.html
             }
     });
