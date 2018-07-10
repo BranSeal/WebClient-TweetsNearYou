@@ -44,10 +44,8 @@
                     var events = new CanvasJS.Chart("eventsContainer", toShow);
                     console.log(events);
                     events.render();
-                });
 
-                $.getJSON('data/top-records.json', function(result) {
-                    var toShow = {
+                    toShow = {
                         animationEnabled: true,
                         theme: "light2",
                         title:{
@@ -73,10 +71,8 @@
                     });
                     var users = new CanvasJS.Chart("usersContainer", toShow);
                     users.render();
-                });
 
-                $.getJSON('data/top-records.json', function(result) {
-                    var toShow = {
+                    toShow = {
                         animationEnabled: true,
                         theme: "light2",
                         title:{
