@@ -12,86 +12,98 @@
 
         <script src='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.js'></script>
         <link href='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.css' rel='stylesheet' />
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
         <script>
-            window.onload = function () {
-            var events = new CanvasJS.Chart("eventsContainer", {
-                animationEnabled: true,
-                theme: "light2",
-                title:{
-                    text: "Total Events per Day"
-                },
-                axisY:{
-                    includeZero: false
-                },
-                data: [{        
-                    type: "line",
-                    dataPoints: [
-                        {"y": 414, "label":"2018-07-04" },
-                        {"y": 520, "label":"2018-07-05" },
-                        {"y": 460, "label":"2018-07-06" },
-                        {"y": 450, "label":"2018-07-07" },
-                        {"y": 500, "label":"2018-07-08" },
-                        {"y": 480, "label":"2018-07-09" },
-                        {"y": 480, "label":"2018-07-10" }]
-                }]
-            });
-            var jsonFile = 'top-records.json'
-            $(document).ready(function(){
-                $.getJSON('data/' + jsonFile, function(result){
-                    $.each(result.events, function(i, field){
-                        console.log(field);
+            $(document).ready(function() {
+                $.getJSON('data/top-records.json', function(result) {
+                    var toShow = {
+                        animationEnabled: true,
+                        theme: "light2",
+                        title:{
+                            text: "Total Events per Day"
+                        },
+                        axisY:{
+                            includeZero: false
+                        },
+                        data: [{        
+                            type: "line",
+                            dataPoints: []
+                        }]
+                    };
+
+                    var today = new Date();
+                    toShow["data"][0]["dataPoints"] = [];
+                    $.each(result.events, function(i, field) {
+                        var dateObj = new Date();
+                        dateObj.setDate(dateObj.getDate() - i);
+                        var date = dateObj.getFullYear() + "-" + (dateObj.getMonth()+1) + "-" + dateObj.getDate();
+                        var toPush = {"y": field, "label":date, "x":(7-i)};
+                        toShow["data"][0]["dataPoints"].push(toPush);
                     });
+                    var events = new CanvasJS.Chart("eventsContainer", toShow);
+                    console.log(events);
+                    events.render();
+                });
+
+                $.getJSON('data/top-records.json', function(result) {
+                    var toShow = {
+                        animationEnabled: true,
+                        theme: "light2",
+                        title:{
+                            text: "Total Users per Day"
+                        },
+                        axisY:{
+                            includeZero: false
+                        },
+                        data: [{        
+                            type: "line",
+                            dataPoints: []
+                        }]
+                    };
+
+                    var today = new Date();
+                    toShow["data"][0]["dataPoints"] = [];
+                    $.each(result.users, function(i, field) {
+                        var dateObj = new Date();
+                        dateObj.setDate(dateObj.getDate() - i);
+                        var date = dateObj.getFullYear() + "-" + (dateObj.getMonth()+1) + "-" + dateObj.getDate();
+                        var toPush = {"y": field, "label":date, "x":(7-i)};
+                        toShow["data"][0]["dataPoints"].push(toPush);
+                    });
+                    var users = new CanvasJS.Chart("usersContainer", toShow);
+                    users.render();
+                });
+
+                $.getJSON('data/top-records.json', function(result) {
+                    var toShow = {
+                        animationEnabled: true,
+                        theme: "light2",
+                        title:{
+                            text: "Total Tweets per Day"
+                        },
+                        axisY:{
+                            includeZero: false
+                        },
+                        data: [{        
+                            type: "line",
+                            dataPoints: []
+                        }]
+                    };
+
+                    var today = new Date();
+                    toShow["data"][0]["dataPoints"] = [];
+                    $.each(result.tweets, function(i, field) {
+                        var dateObj = new Date();
+                        dateObj.setDate(dateObj.getDate() - i);
+                        var date = dateObj.getFullYear() + "-" + (dateObj.getMonth()+1) + "-" + dateObj.getDate();
+                        var toPush = {"y": field, "label":date, "x":(7-i)};
+                        toShow["data"][0]["dataPoints"].push(toPush);
+                    });
+                    var tweets = new CanvasJS.Chart("tweetsContainer", toShow);
+                    tweets.render();
                 });
             });
-            var users = new CanvasJS.Chart("usersContainer", {
-                animationEnabled: true,
-                theme: "light2",
-                title:{
-                    text: "Total Users per Day"
-                },
-                axisY:{
-                    includeZero: false
-                },
-                data: [{        
-                    type: "line",       
-                    dataPoints: [
-                        { y: 902, label:"2018-07-04" },
-                        { y: 1032, label:"2018-07-05" },
-                        { y: 882, label:"2018-07-06" },
-                        { y: 1376, label:"2018-07-07" },
-                        { y: 1221, label:"2018-07-08" },
-                        { y: 927, label:"2018-07-09" },
-                        { y: 812, label:"2018-07-10" }
-                    ]
-                }]
-            });
-            var tweets = new CanvasJS.Chart("tweetsContainer", {
-                animationEnabled: true,
-                theme: "light2",
-                title:{
-                    text: "Total Tweets per Day"
-                },
-                axisY:{
-                    includeZero: false
-                },
-                data: [{        
-                    type: "line",       
-                    dataPoints: [
-                        { y: 236, label:"2018-07-04" },
-                        { y: 488, label:"2018-07-05" },
-                        { y: 263, label:"2018-07-06" },
-                        { y: 155, label:"2018-07-07" },
-                        { y: 646, label:"2018-07-08" },
-                        { y: 384, label:"2018-07-09" },
-                        { y: 573, label:"2018-07-10" }
-                    ]
-                }]
-            });
-            events.render();
-            users.render();
-            tweets.render();
-            }
         </script>
 
         <title>Trendify Admin Dashboard</title>
@@ -126,6 +138,7 @@
     
         <div class="stats">
             <div id="eventsContainer" style="height: 200px; width: 1000px;"></div>
+            <div id="testCont"></div>
             <br />
             <div id="usersContainer" style="height: 200px; width: 1000px;"></div>
             <br />
@@ -135,33 +148,56 @@
       
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
-        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-        <!-- <script>
-            $(document).ready(function(){
-                $(".submitMap").click(function(){
-                    $.post("python/json_to_geojson.py",
-                    'data/' + document.getElementById('mapday').value + '.geojson',
-                    function(data,status) {
-                        alert("Status: " + status);
-                    });
-                });
-            });
-        </script> -->
+
+        <script src = "js/home.js"></script>
         <script>
+            $(document).ready(function() {
+                // $.getJSON('data/top-records.json', function(result) {
+                //     var toShow = {
+                //         animationEnabled: true,
+                //         theme: "light2",
+                //         title:{
+                //             text: "Total Events per Day"
+                //         },
+                //         axisY:{
+                //             includeZero: false
+                //         },
+                //         data: [{        
+                //             type: "line",
+                //             dataPoints: []
+                //         }]
+                //     };
+
+                //     var today = new Date();
+                //     toShow["data"][1] = [];
+                //     $.each(result.events, function(i, field) {
+                //         var dateObj = new Date();
+                //         dateObj.setDate(dateObj.getDate() - i);
+                //         var date = dateObj.getFullYear() + "-" + (dateObj.getMonth()+1) + "-" + dateObj.getDate();
+                //         var toPush = {"y": field, "label":date};
+                //         toShow["data"][1].push(toPush);
+                //     });
+                //     var events = new CanvasJS.Chart("eventsContainer", toShow);
+                //     console.log(events);
+                //     events.render();
+                // });
+
             $(document).ready(function(){
                 $(".submitMap").click(function(){
                     $.getJSON('data/' + document.getElementById('mapday').value + '_top.json', function(result){
+                        $(".top-events-list").empty();
                         $.each(result.list, function(i, field){
                             $(".top-events-list").append("<li>" + "#" + field + "</li>");
                         });
                     });
                 });
             });
+        });
         </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
         <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-        <script src = "js/home.js"></script>
     </body>
 </html>
