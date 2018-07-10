@@ -51,3 +51,13 @@ success: function showMapData() {
 
 	document.getElementById("top-events").style.display = "block";
 }
+
+function signOut() {
+	firebase.auth().signOut().then(function() {
+	  	// Sign-out successful.
+	  	window.alert("Signed out.");
+	  	window.location = 'index.html';
+	}).catch(function(error) {
+	  	window.alert(error);
+	});
+}

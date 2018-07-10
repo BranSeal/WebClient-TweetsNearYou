@@ -51,6 +51,21 @@
     messagingSenderId: "804966898269"
   };
   firebase.initializeApp(config);
+
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+        // User logged in.
+        console.log("logged in");
+        alert("Already logged in.");
+        window.location = 'main.html';
+    } else {
+        // Show UI to login. This can be either triggered on initial sign in or on return from redirect
+        // to complete the pending redirect.
+        console.log("Not logged in!");
+        // alert("Please log in before viewing the admin dashboard.");
+        // window.location = 'index.html';
+    }
+});
 </script>
 
 <script src = "js/login.js"></script>
