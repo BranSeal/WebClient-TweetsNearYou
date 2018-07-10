@@ -1,0 +1,33 @@
+{
+  "type": "FeatureCollection", 
+  "features": [
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          -84.5, 
+          33.75
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "description": "See corresponding tweets here: <br></br> <a target = '_blank' href = 'https://twitter.com/search?q=%23GeorgePBurdell2020%20near%3A33.75%2C-84.5%20within%3A2mi%20since%3A2018-07-10%20until%3A2018-07-11&src=typd'>https://twitter.com/search?q=%23GeorgePBurdell2020%20near%3A33.75%2C-84.5%20within%3A2mi%20since%3A2018-07-10%20until%3A2018-07-11&src=typd</a>", 
+        "title": "#GeorgePBurdell2020"
+      }
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          -84.5, 
+          33.79166666666667
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "description": "See corresponding tweets here: <br></br> <a target = '_blank' href = 'https://twitter.com/search?q=%23SophmoreByCreditHour%20near%3A33.7916666667%2C-84.5%20within%3A2mi%20since%3A2018-07-10%20until%3A2018-07-11&src=typd'>https://twitter.com/search?q=%23SophmoreByCreditHour%20near%3A33.7916666667%2C-84.5%20within%3A2mi%20since%3A2018-07-10%20until%3A2018-07-11&src=typd</a>", 
+        "title": "#SophmoreByCreditHour"
+      }
+    }
+  ]
+}
